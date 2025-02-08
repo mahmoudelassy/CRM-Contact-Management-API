@@ -9,7 +9,10 @@
     "skipLibCheck": true,
     "moduleResolution": "node16",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
