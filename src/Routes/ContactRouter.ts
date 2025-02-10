@@ -1,21 +1,26 @@
 import express from 'express';
 import * as ContactController from '../Controllers/ContactController.js';
+import {
+  validateContactId,
+  validateCreateContact,
+  validateListContacts,
+  validateTransferBalance,
+} from '../Middlewares/contactValidators.js';
 
 const router = express.Router();
 
 router
   .route('/')
-  .post(ContactController.createContact)
-  .get(ContactController.listContacts);
+  .post(validateCreateContact, ContactController.createContact)
+  .get(validateListContacts, ContactController.listContacts);
 
 router
   .route('/:id')
-  .get(ContactController.getContactById)
-  .patch(ContactController.updateContactPartial)
-  .delete(ContactController.deleteContact);
+  .get(validateContactId, ContactController.getContactById)
+  .patch(validateContactId, ContactController.updateContactPartial)
+  .delete(validateContactId, ContactController.deleteContact);
 
-router.post('/transfer', ContactController.transferContactBalance);
-
-router.get('/:id/audit', ContactController.getContactAuditHistory);
+router.post('/transfer', validateTransferBalance, ContactController.transferContactBalance);
+router.get('/:id/audit', validateContactId, ContactController.getContactAuditHistory);
 
 export { router };
