@@ -10,7 +10,7 @@ This is a simple Contact Management API built with Node.js, Express, and TypeORM
 ## Running the Application with Docker
 1. Clone the repository:
    ```sh
-   git clone https://github.com/mahmoudelassy/CRM-Contact-Management-API
+   git clone https://github.com/mahmoudelassy/CRM-Contact-Management-API.git
    cd CRM-Contact-Management-API-master
    ```
 2. Build and run the application:
@@ -51,7 +51,7 @@ http://localhost:3000
   {
     "status": "success",
     "message": "Contact created successfully",
-    "data": { "id": "uuid", ... }
+    "data": { "id": "uuid", "..." }
   }
   ```
 
@@ -67,7 +67,7 @@ http://localhost:3000
   {
     "status": "success",
     "message": "Contacts fetched successfully",
-    "data": [ { "id": "uuid", ... } ]
+    "data": [ { "id": "uuid", "..." } ]
   }
   ```
 
@@ -79,7 +79,7 @@ http://localhost:3000
   {
     "status": "success",
     "message": "Contact fetched successfully",
-    "data": { "id": "uuid", ... }
+    "data": { "id": "uuid", "..." }
   }
   ```
 
@@ -97,7 +97,7 @@ http://localhost:3000
   {
     "status": "success",
     "message": "Contact updated successfully",
-    "data": { "id": "uuid", ... }
+    "data": { "id": "uuid", "..." }
   }
   ```
 
@@ -129,8 +129,8 @@ http://localhost:3000
     "status": "success",
     "message": "Balance transferred successfully",
     "data": {
-      from_contact: { "id": "uuid", ... },
-      to_contact: { "id": "uuid", ... }
+      from_contact: { "id": "uuid", "..." },
+      to_contact: { "id": "uuid", "..." }
     }
   }
   ```
@@ -143,7 +143,7 @@ http://localhost:3000
   {
     "status": "success",
     "message": "Audit history fetched successfully",
-    "data": [ { "updated_snapshot": { ... } } ]
+    "data": [ { "updated_snapshot": { "..." } } ]
   }
   ```
 
