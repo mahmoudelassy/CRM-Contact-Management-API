@@ -11,7 +11,7 @@ This is a simple Contact Management API built with Node.js, Express, and TypeORM
 1. Clone the repository:
    ```sh
    git clone https://github.com/mahmoudelassy/CRM-Contact-Management-API.git
-   cd CRM-Contact-Management-API-master
+   cd CRM-Contact-Management-API
    ```
 2. Build and run the application:
    ```sh
