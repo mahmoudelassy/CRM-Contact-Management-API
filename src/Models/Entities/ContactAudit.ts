@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Contact } from './Contact.js';
+import { Contact } from './Contact';
 
 @Entity()
 export class ContactAudit {

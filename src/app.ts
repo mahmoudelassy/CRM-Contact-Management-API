@@ -1,11 +1,11 @@
 import express from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import { router as ContactRouter } from './Routes/ContactRouter.js';
-import { AppDataSource } from './data-source.js'; // Make sure this path is correct
-import { errorHandler } from './Middlewares/errorHandler.js';
+import { router as ContactRouter } from './Routes/ContactRouter';
+import { AppDataSource } from './data-source';
+import { errorHandler } from './Middlewares/errorHandler';
 
-const app = express();
+export const app = express();
 dotenv.config();
 
 async function initializeApp() {

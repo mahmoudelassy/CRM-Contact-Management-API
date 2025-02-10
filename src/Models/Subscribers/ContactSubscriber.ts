@@ -1,8 +1,8 @@
 import { EntitySubscriberInterface, EventSubscriber, UpdateEvent } from 'typeorm';
 
-import { Contact } from '../Entities/Contact.js';
-import { ContactAuditRepository } from '../ContactAuditModel.js';
-import { ContactAudit } from '../Entities/ContactAudit.js';
+import { Contact } from '../Entities/Contact';
+import { ContactAuditRepository } from '../ContactAuditModel';
+import { ContactAudit } from '../Entities/ContactAudit';
 
 @EventSubscriber()
 export class ContactSubscriber implements EntitySubscriberInterface<Contact> {

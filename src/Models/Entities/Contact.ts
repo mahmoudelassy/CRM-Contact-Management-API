@@ -1,13 +1,5 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  UpdateDateColumn,
-  Unique,
-  OneToMany,
-} from 'typeorm';
-import { ContactAudit } from './ContactAudit.js';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, Unique, OneToMany } from 'typeorm';
+import { ContactAudit } from './ContactAudit';
 
 @Entity()
 @Unique(['email', 'company'])

@@ -1,11 +1,11 @@
 import express from 'express';
-import * as ContactController from '../Controllers/ContactController.js';
+import * as ContactController from '../Controllers/ContactController';
 import {
   validateContactId,
   validateCreateContact,
   validateListContacts,
   validateTransferBalance,
-} from '../Middlewares/contactValidators.js';
+} from '../Middlewares/contactValidators';
 
 const router = express.Router();
 

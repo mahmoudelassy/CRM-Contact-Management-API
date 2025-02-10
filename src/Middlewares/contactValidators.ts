@@ -1,21 +1,25 @@
 import { body, param, query, validationResult } from 'express-validator/lib/index.js';
 import { Request, Response, NextFunction, RequestHandler } from 'express';
-import { AppError } from '../Utils/AppError.js';
+import { AppError } from '../Utils/AppError';
 
 type ExpressMiddleware = RequestHandler | ((req: Request, res: Response, next: NextFunction) => void);
 
 const handleValidationErrors: ExpressMiddleware = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    const messages = errors.array().map((err) => err.msg);
-    throw new AppError(`Validation error: ${messages[0]}`, 400);
+    const validationErrors = errors.array().map((err: any) => ({
+      field: err.param,
+      message: err.msg,
+    }));
+
+    throw new AppError('Validation error: One or more fields are incorrect', 400, 'VALIDATION_ERROR', validationErrors);
   }
   next();
 };
 
 export const validateCreateContact: ExpressMiddleware[] = [
-  body('firstName').notEmpty().withMessage('First name is required'),
-  body('lastName').notEmpty().withMessage('Last name is required'),
+  body('first_name').notEmpty().withMessage('First name is required'),
+  body('last_name').notEmpty().withMessage('Last name is required'),
   body('email').isEmail().withMessage('Invalid email format'),
   body('company').notEmpty().withMessage('Company is required'),
   body('balance').optional().isFloat({ min: 0 }).withMessage('Balance must be a positive number'),
