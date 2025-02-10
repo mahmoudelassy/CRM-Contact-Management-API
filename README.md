@@ -129,8 +129,8 @@ http://localhost:3000
     "status": "success",
     "message": "Balance transferred successfully",
     "data": {
-      from_contact: { "id": "uuid", "..." },
-      to_contact: { "id": "uuid", "..." }
+      "from_contact": { "id": "uuid", "..." },
+      "to_contact": { "id": "uuid", "..." }
     }
   }
   ```
