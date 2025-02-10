@@ -17,7 +17,7 @@ This is a simple Contact Management API built with Node.js, Express, and TypeORM
    ```sh
    docker-compose up --build
    ```
-   This will start both the PostgreSQL database and the Node.js API.
+   This will start both the PostgreSQL database and the Node.js API (migrations handled automatically).
 
 ## Running Tests
 To run the tests, execute:
