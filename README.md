@@ -32,7 +32,7 @@ http://localhost:3000
 ```
 
 
-## 🏗 Database Schema
+## Database Schema
 
 ### **Contact Table**
 | Column Name   | Data Type         | Constraints                                          |
@@ -57,7 +57,7 @@ http://localhost:3000
 ---
 
 
-### Endpoints
+## Endpoints
 
 #### 1. Create a Contact
 - **URL:** `/contacts`
