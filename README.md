@@ -31,6 +31,32 @@ npm run test
 http://localhost:3000
 ```
 
+
+## 🏗 Database Schema
+
+### **Contact Table**
+| Column Name   | Data Type         | Constraints                                          |
+|--------------|------------------|------------------------------------------------------|
+| id           | UUID              | Primary Key, Auto-generated                         |
+| first_name   | VARCHAR(255)      | NOT NULL                                            |
+| last_name    | VARCHAR(255)      | NOT NULL                                            |
+| email        | VARCHAR(255)      | NOT NULL, Unique with `company`                     |
+| company      | VARCHAR(255)      | NOT NULL, Unique with `email`                       |
+| balance      | NUMERIC(10,2)     | Default: `0`                                        |
+| is_deleted   | BOOLEAN           | Default: `false`                                    |
+| created_at   | TIMESTAMP         | Auto-generated (`NOW()`)                            |
+| updated_at   | TIMESTAMP         | Auto-updated (`NOW()`)                              |
+---
+### **ContactAudit Table**
+| Column Name        | Data Type        | Constraints                        |
+|-------------------|----------------|------------------------------------|
+| id               | SERIAL          | Primary Key, Auto-increment       |
+| contact_id       | UUID            | Foreign Key → `contact(id)`       |
+| updated_snapshot | JSONB           | Stores audit data                 |
+
+---
+
+
 ### Endpoints
 
 #### 1. Create a Contact
